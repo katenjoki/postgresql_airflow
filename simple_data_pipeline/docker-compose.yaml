@@ -1,0 +1,27 @@
+version: '3'
+services:
+  pg_maize_database:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER:"${PG_USER}"
+      - POSTGRES_PASSWORD:"${PG_PASSWORD}"
+      - POSTGRES_DB:"${PG_DATABASE}"
+    volumes:
+      - "C:/Users/user/Desktop/Projects/agri_data_eng/ETL_docker_sql/maize_postgres_volume:/var/lib/postgresql/pg_data:rw"
+    ports:
+      - "5432:5432"
+    networks:
+      - airflow
+  #pgadmin:
+  #  image: dpage/pgadmin4
+  #  environment:
+  #    - PGADMIN_DEFAULT_EMAIL:"${PGADMIN_EMAIL}"
+  #    - PGADMIN_DEFAULT_PASSWORD:"${PGADMIN_EMAIL_PASSWORD}"
+  #  ports:
+  #    - "8080:80"
+  #  networks:
+  #    - network_ke
+
+networks:
+  airflow:
+      name: airflow_default

@@ -1,0 +1,116 @@
+[2023-05-29T08:05:37.499+0000] {logging_mixin.py:149} INFO - Changing /opt/***/logs/dag_id=local_ingest_dag/run_id=manual__2023-05-29T08:05:32.616181+00:00/task_id=ingest_data_task_2017 permission to 509
+[2023-05-29T08:05:37.539+0000] {logging_mixin.py:149} INFO - Changing /opt/***/logs/dag_id=local_ingest_dag/run_id=manual__2023-05-29T08:05:32.616181+00:00/task_id=ingest_data_task_2017 permission to 509
+[2023-05-29T08:05:37.576+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_ingest_dag.ingest_data_task_2017 manual__2023-05-29T08:05:32.616181+00:00 [queued]>
+[2023-05-29T08:05:37.589+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_ingest_dag.ingest_data_task_2017 manual__2023-05-29T08:05:32.616181+00:00 [queued]>
+[2023-05-29T08:05:37.591+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-05-29T08:05:37.607+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): ingest_data_task_2017> on 2023-05-29 08:05:32.616181+00:00
+[2023-05-29T08:05:37.613+0000] {standard_task_runner.py:57} INFO - Started process 97 to run task
+[2023-05-29T08:05:37.618+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_ingest_dag', 'ingest_data_task_2017', 'manual__2023-05-29T08:05:32.616181+00:00', '--job-id', '221', '--raw', '--subdir', 'DAGS_FOLDER/local_data_ingestion_gcs.py', '--cfg-path', '/tmp/tmpf6w137fm']
+[2023-05-29T08:05:37.622+0000] {standard_task_runner.py:85} INFO - Job 221: Subtask ingest_data_task_2017
+[2023-05-29T08:05:37.678+0000] {logging_mixin.py:149} INFO - Changing /opt/***/logs/dag_id=local_ingest_dag/run_id=manual__2023-05-29T08:05:32.616181+00:00/task_id=ingest_data_task_2017 permission to 509
+[2023-05-29T08:05:37.687+0000] {task_command.py:410} INFO - Running <TaskInstance: local_ingest_dag.ingest_data_task_2017 manual__2023-05-29T08:05:32.616181+00:00 [running]> on host 34690edae7fe
+[2023-05-29T08:05:37.794+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_ingest_dag' AIRFLOW_CTX_TASK_ID='ingest_data_task_2017' AIRFLOW_CTX_EXECUTION_DATE='2023-05-29T08:05:32.616181+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-05-29T08:05:32.616181+00:00'
+[2023-05-29T08:05:37.796+0000] {logging_mixin.py:149} INFO - ---------------------------------------
+[2023-05-29T08:05:41.638+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3366, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "pg_maize_database" to address: Name or service not known
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest.py", line 24, in ingest_data_to_postgresql
+    engine.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3320, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3399, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3370, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2204, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3366, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "pg_maize_database" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2023-05-29T08:05:41.653+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=local_ingest_dag, task_id=ingest_data_task_2017, execution_date=20230529T080532, start_date=20230529T080537, end_date=20230529T080541
+[2023-05-29T08:05:41.669+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 221 for task ingest_data_task_2017 ((psycopg2.OperationalError) could not translate host name "pg_maize_database" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8); 97)
+[2023-05-29T08:05:41.695+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-05-29T08:05:41.719+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
