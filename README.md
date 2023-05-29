@@ -12,6 +12,8 @@ This project is a continuation of the [Simple ETL Data Pipeline](https://github.
 - [PostgreSQL Database](#postgresql-database)
 
 # Project Summary
+
+![postgresql-airflow](assets/postgresql_airflow.png)
 In this project, I used Airflow as an orchestrator for data processing tasks. I defined and executed the workflows using Directed Acyclic Graphs (**DAGS**) to represent the sequence of tasks needed to process and load data into PostgreSQL.
 
 I have also edited the [docker_compose.yaml](https://github.com/katenjoki/simple_data_pipeline/blob/master/docker-compose.yaml) file from the [Simple ETL Data Pipeline](https://github.com/katenjoki/simple_data_pipeline) project to simplify the code. This is why the edited folder is part of this project. 
