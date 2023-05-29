@@ -82,7 +82,7 @@ When the workflow runs successfully, this is what you should see:
 # PostgreSQL Database 
 Next we confirm that the data was loaded into the PostgreSQL database using pgcli
 1. Open a new command prompt as the docker container is running in another window. So now you should have 3 command prompt terminals open and running. 
-2. Connect to a PostgreSQL database using pgcli command-line tool by running the code below. 
+2. Connect to the maize_KE PostgreSQL database using pgcli command-line tool by running the code below and start querying! 
 ```
 pgcli -h localhost -p 5432 -U root -d maize_KE
 ```
