@@ -3023,3 +3023,21 @@ SyntaxError: invalid syntax
 [2023-05-29T12:48:43.008+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_ingest_dag']) retrieved from /opt/airflow/dags/local_data_ingestion_gcs.py
 [2023-05-29T12:48:43.091+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:48:43.091+0000] {dag.py:2726} INFO - Sync 1 DAGs
 [2023-05-29T12:48:43.173+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/local_data_ingestion_gcs.py took 0.913 seconds
+[2023-05-29T12:49:13.566+0000] {processor.py:157} INFO - Started process (PID=313) to work on /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:49:13.571+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/local_data_ingestion_gcs.py for tasks to queue
+[2023-05-29T12:49:13.574+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:49:13.574+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:49:14.475+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_ingest_dag']) retrieved from /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:49:14.563+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:49:14.563+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-05-29T12:49:14.737+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/local_data_ingestion_gcs.py took 1.183 seconds
+[2023-05-29T12:49:44.975+0000] {processor.py:157} INFO - Started process (PID=328) to work on /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:49:44.979+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/local_data_ingestion_gcs.py for tasks to queue
+[2023-05-29T12:49:44.985+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:49:44.983+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:49:45.820+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_ingest_dag']) retrieved from /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:49:45.877+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:49:45.876+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-05-29T12:49:45.989+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/local_data_ingestion_gcs.py took 1.026 seconds
+[2023-05-29T12:50:16.314+0000] {processor.py:157} INFO - Started process (PID=341) to work on /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:50:16.323+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/local_data_ingestion_gcs.py for tasks to queue
+[2023-05-29T12:50:16.326+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:50:16.325+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:50:17.591+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_ingest_dag']) retrieved from /opt/airflow/dags/local_data_ingestion_gcs.py
+[2023-05-29T12:50:17.647+0000] {logging_mixin.py:149} INFO - [2023-05-29T12:50:17.646+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-05-29T12:50:17.743+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/local_data_ingestion_gcs.py took 1.451 seconds
