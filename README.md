@@ -2,6 +2,15 @@
 
 This project is a continuation of the [Simple ETL Data Pipeline](https://github.com/katenjoki/simple_data_pipeline) where we built an ETL pipeline designed to run on Docker containers. The pipeline **extracts** Kenya's 2017 and 2018 Maize Production data by Counties from the [Kilimo Data Portal](http://kilimodata.org/dataset/kenya-maize-production-by-counties), **transforms** and **loads** the data into a PostgresQL database and uses pgAdmin to visualize, manage and interact with pgAdmin.
 
+# Table of contents
+
+- [Table of Contents](#Table-Of-Contents)
+- [Project Summary](#project-summary)
+- [Prerequisites](#prerequisites)
+- [Installation and Setup](#installation-and-setup)
+- [Running Airflow](#running-airflow)
+- [PostgreSQL Database](#postgresql-database)
+
 # Project Summary
 In this project, I used Airflow as an orchestrator for data processing tasks. I defined and executed the workflows using Directed Acyclic Graphs (**DAGS**) to represent the sequence of tasks needed to process and load data into PostgreSQL.
 
@@ -70,6 +79,17 @@ Trigger the 'local_ingest_dag' and monitor the DAG runs.
 When the workflow runs successfully, this is what you should see:
 ![airflow](assets/airflow.PNG)
 
-# Checking that the data was loaded into the PostgreSQL database using pgcli
-1. Open a new command prompt as the docker container is running in another window. 
-2. 
+# PostgreSQL Database 
+Next we confirm that the data was loaded into the PostgreSQL database using pgcli
+1. Open a new command prompt as the docker container is running in another window. So now you should have 3 command prompt terminals open and running. 
+2. Connect to a PostgreSQL database using pgcli command-line tool by running the code below. 
+```
+pgcli -h localhost -p 5432 -U root -d maize_KE
+```
+* -pgcli: The command to start the pgcli tool.
+* -h localhost: Specifies the host or IP address of the PostgreSQL server. localhost, indicates that the server is running on the local machine.
+* -p 5432: The default port for PostgreSQL is 5432.
+* -U root: Specifies the username to connect to the PostgreSQL server. 
+* -d maize_KE: Specifies the name of the PostgreSQL database to connect to, in this case, maize_KE.
+
+![pgcli](assets/pgcli.PNG)
