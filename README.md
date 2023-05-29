@@ -10,7 +10,7 @@ I have also edited the [docker_compose.yaml](https://github.com/katenjoki/simple
 Edits I've made in this project's [docker_compose.yaml file](https://github.com/katenjoki/postgresql_airflow/blob/master/simple_data_pipeline/docker-compose.yaml) for this demo:
 * removed the 'maize_ke_ingest' service
 * hashed out the pgadmin service configurations 
-* added network 'airflow-default' so that airflow and postgreSQL can communicate.
+* added network 'airflow-default' so that airflow and postgreSQL can communicate
 
 # Prerequisites 
 Docker: Make sure you have Docker installed on your machine. You can download and install Docker from the official website: https://www.docker.com
@@ -70,6 +70,6 @@ Trigger the 'local_ingest_dag' and monitor the DAG runs.
 When the workflow runs successfully, this is what you should see:
 ![airflow](assets/airflow.PNG)
 
-# Checking that the data was loaded in the PostgreSQL database
+# Checking that the data was loaded into the PostgreSQL database using pgcli
 1. Open a new command prompt as the docker container is running in another window. 
 2. 
